@@ -1,5 +1,5 @@
 {
-    "name": "classic-o/nova-media-library",
+    "name": "msassa/nova-media-library",
     "description": "Tool and field that will let you managing images and add them to the posts as single image or gallery",
     "version": "0.1.2",
     "keywords": ["laravel", "nova", "media", "gallery"],

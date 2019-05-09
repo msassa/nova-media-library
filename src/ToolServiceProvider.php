@@ -17,12 +17,12 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	    $this->publishes([
-		    __DIR__.'/../config/' => config_path(),
-		    __DIR__.'/../database/migrations/' => base_path('/database/migrations')
-	    ], 'config-nml');
+        $this->publishes([
+            __DIR__ . '/../config/' => config_path(),
+            __DIR__ . '/../database/migrations/' => base_path('/database/migrations/tenant')
+        ], 'config-nml');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-media-library');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-media-library');
 
         $this->app->booted(function () {
             $this->routes();
@@ -41,8 +41,8 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/nova-media-library')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/nova-media-library')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**
@@ -54,5 +54,4 @@ class ToolServiceProvider extends ServiceProvider
     {
         //
     }
-
 }
